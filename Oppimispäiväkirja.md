@@ -308,15 +308,14 @@ const UserSchema = new mongoose.Schema({
 
 ### 💼 Pää- ja sivutyön näkyvyys projektissa
 - **Päätyö (TC Dungeon Helper)**
-  - Vastuualueeni frontend-kehityksessä
-  - Autentikaation toteutus (Google-kirjautuminen ja perinteinen kirjautuminen)
-  - Merchant-toiminnallisuuden kehitys
-  - Käyttöliittymän suunnittelu ja toteutus Angular Materialilla
+  - Vastuualueeni FullStack -kehityksessä
+  - Merchant ja Random Encounters -toiminnallisuudet
 
 - **Sivutyö (Portfolio)**
   - Dokumentointi ja oppimispäiväkirjan ylläpito
   - Koodin laadun varmistaminen ja refaktorointi
   - Tiimin sisäinen mentorointi ja tuki
+  - Autentikaation toteutus (Google-kirjautuminen ja perinteinen kirjautuminen)
 
 ### 🌟 Oppimiskokemukset ja oivallukset
 - **Tekniset taidot**
