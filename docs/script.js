@@ -69,3 +69,54 @@ document.querySelectorAll('section').forEach(section => {
     section.classList.add('hidden');
     observer.observe(section);
 });
+
+// Code snippet functionality
+function toggleCode(id) {
+    const codeContent = document.getElementById(id);
+    const header = codeContent.previousElementSibling;
+    const expandIcon = header.querySelector('.expand-icon');
+    
+    if (codeContent.classList.contains('expanded')) {
+        codeContent.classList.remove('expanded');
+        expandIcon.style.transform = 'rotate(0deg)';
+    } else {
+        codeContent.classList.add('expanded');
+        expandIcon.style.transform = 'rotate(180deg)';
+        // Highlight code when expanded
+        Prism.highlightElement(codeContent.querySelector('code'));
+    }
+}
+
+function copyCode(id, event) {
+    event.stopPropagation(); // Prevent triggering toggleCode
+    const codeBlock = document.getElementById(id);
+    const code = codeBlock.querySelector('code').innerText;
+    
+    // Create a temporary textarea element to copy the text
+    const textarea = document.createElement('textarea');
+    textarea.value = code;
+    document.body.appendChild(textarea);
+    textarea.select();
+    
+    try {
+        document.execCommand('copy');
+        // Show feedback
+        const copyBtn = event.currentTarget;
+        const icon = copyBtn.querySelector('i');
+        icon.classList.remove('fa-copy');
+        icon.classList.add('fa-check');
+        setTimeout(() => {
+            icon.classList.remove('fa-check');
+            icon.classList.add('fa-copy');
+        }, 2000);
+    } catch (err) {
+        console.error('Failed to copy text: ', err);
+    }
+    
+    document.body.removeChild(textarea);
+}
+
+// Initialize Prism.js for all code blocks on page load
+document.addEventListener('DOMContentLoaded', () => {
+    Prism.highlightAll();
+});

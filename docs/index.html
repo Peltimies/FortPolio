@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js" defer></script>
+    
+    <!-- Font Awesome for icons -->
+
+    <!-- Prism.js for syntax highlighting -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js" defer></script>
 </head>
 <body>
     <header>
@@ -19,6 +26,7 @@
                 <li><a href="#projects">Projektit</a></li>
                 <li><a href="#skills">Taidot</a></li>
                 <li><a href="#contact">Yhteystiedot</a></li>
+                <li><a href="#learning-diary">Oppimispäiväkirja</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -32,7 +40,7 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1>Tervetuloa Portfoliooni</h1>
-                <p>Ohjelmistokehittäjä | Web Developer</p>
+                <p>Full Stack Developer | Angular & Node.js</p>
             </div>
         </section>
 
@@ -40,22 +48,180 @@
             <h2>Tietoa minusta</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Tähän tulee kuvaus sinusta ja osaamisestasi...</p>
+                    <p>Olen Full Stack -kehittäjä, joka erikoistuu Angular- ja Node.js-teknologioihin. Minulla on vahva kokemus web-sovellusten kehittämisestä ja tietokantaintegraatioista.</p>
+                    <p>Nautin erityisesti haastavien ongelmien ratkaisemisesta ja uusien teknologioiden oppimisesta. Tiimityöskentely ja selkeä kommunikaatio ovat minulle tärkeitä arvoja ohjelmistokehityksessä.</p>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="projects">
-            <h2>Projektit</h2>
-            <div class="projects-grid">
-                <!-- Project cards will be added here -->
-                <div class="project-card">
-                    <h3>Projekti 1</h3>
-                    <p>Projektin kuvaus tulee tähän...</p>
+            <h2>TC-projekti: DungeonHelper</h2>
+            
+            <div class="project-showcase">
+                <div class="project-header">
+                    <div class="project-image">
+                        <img src="../Kuvat/proto_biomes.png" alt="Biomien listaus" class="project-img">
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Projekti 2</h3>
-                    <p>Projektin kuvaus tulee tähän...</p>
+
+                <div class="project-details">
+                    <div class="project-intro">
+                        <h3>DungeonHelper</h3>
+                        <p class="project-tagline">Ultimaattinen kumppani pöytäroolipelien monimutkaiseen ja jännittävään maailmaan.</p>
+                    </div>
+
+                    <div class="project-description">
+                        <p>Olitpa kokenut pelinjohtaja tai uusi pelaaja, DungeonHelper on suunniteltu parantamaan pelikokemustasi tarjoamalla kattavan valikoiman työkaluja ja resursseja.</p>
+                    </div>
+
+                    <div class="project-story">
+                        <h4>Konseptista Todellisuuteen: DungeonHelperin Tarina</h4>
+                        <blockquote>
+                            <p>"Olen ollut omistautunut pelinjohtaja viimeiset kahdeksan vuotta, ja olen oppinut paljon pelinjohtamisen taiteesta. Yksi suurimmista haasteistani on ollut hajanaisten ajatusteni hallinta. Aika, joka kuluu monien taulukoiden, kaavioiden ja sen vaikeasti löydettävän sääntökirjan sivun etsimiseen, olisi voitu käyttää paremmin pelin sujuvuuden ylläpitämiseen.</p>
+                            <p>Vaikka saatavilla on lukuisia RPG-sovelluksia, harvat tarjoavat kaikki ne kattavat ominaisuudet, joita itse kaipaan. Tämä johti DungeonHelperin luomiseen. DungeonHelper on suunniteltu pelinjohtajille, ja se tarjoaa nopean pääsyn kaikkiin taulukoihisi, kaavioihisi ja muuhun, eliminoiden tarpeen selata sivuja ja muistiinpanoja."</p>
+                            <footer>- Nojonen</footer>
+                        </blockquote>
+                    </div>
+
+                    <div class="project-features">
+                        <h4>Keskeiset ominaisuudet</h4>
+                        <ul>
+                            <li><span class="feature-icon">🎲</span>Random Encounters -toiminto</li>
+                            <li><span class="feature-icon">🛡️</span>Merchants -toiminto</li>
+            
+                        </ul>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h4>Teknologiat</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag"><i class="fab fa-angular"></i>Angular</span>
+                            <span class="tech-tag"><i class="fab fa-node-js"></i>Node.js</span>
+                            <span class="tech-tag"><i class="fas fa-database"></i>MongoDB</span>
+                            <span class="tech-tag"><i class="fab fa-js"></i>TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="code-examples" class="code-examples-section">
+            <h2>Koodiesimerkit</h2>
+            <div class="code-examples">
+                <div class="code-example">
+                    <div class="code-header" onclick="toggleCode('code1')">
+                        <h4>Tietokantarakenne (InMemoryService)</h4>
+                        <div class="code-actions">
+                            <button class="copy-btn" onclick="copyCode('code1', event)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                    </div>
+                    <div class="code-content" id="code1">
+                        <div class="window-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control maximize"></span>
+                        </div>
+                        <pre><code class="language-typescript">
+export class InMemoryService implements InMemoryDbService {
+  createDb() {
+    const highwayEncs = [
+      {
+        id: 1,
+        name: 'Highwaymen',
+        description: 'A group of bandits, armed to the teeth, are lying in wait to ambush unsuspecting travelers.'
+      }
+    ];
+
+    const dungeonEncs = [
+      {
+        id: 9,
+        name: 'Injured Dungeoneer',
+        description: 'An injured dungeoneer is limping around the dungeon and needs medical attention'
+      }
+    ];
+
+    const wildernessEncs = [
+      {
+        id: 12,
+        name: 'Owlbear',
+        description: 'An Owlbear is heard rummaging through the bushes nearby'
+      }
+    ];
+
+    return { highwayEncs, dungeonEncs, wildernessEncs };
+  }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-header" onclick="toggleCode('code2')">
+                        <h4>Google-kirjautumisen konfiguraatio</h4>
+                        <div class="code-actions">
+                            <button class="copy-btn" onclick="copyCode('code2', event)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                    </div>
+                    <div class="code-content" id="code2">
+                        <div class="window-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control maximize"></span>
+                        </div>
+                        <pre><code class="language-typescript">
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { SocialLoginModule, GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { JwtModule } from '@auth0/angular-jwt';
+
+@NgModule({
+  imports: [
+    FormsModule,
+    SocialLoginModule,
+    GoogleSigninButtonModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ['localhost:4200'],
+        disallowedRoutes: []
+      }
+    })
+  ]
+})
+export class AppModule {}</code></pre>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <div class="code-header" onclick="toggleCode('code3')">
+                        <h4>Encountereiden tallennus - Korjattu koodi</h4>
+                        <div class="code-actions">
+                            <button class="copy-btn" onclick="copyCode('code3', event)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                            <span class="expand-icon">▼</span>
+                        </div>
+                    </div>
+                    <div class="code-content" id="code3">
+                        <div class="window-controls">
+                            <span class="control close"></span>
+                            <span class="control minimize"></span>
+                            <span class="control maximize"></span>
+                        </div>
+                        <pre><code class="language-javascript">
+// Alkuperäinen ongelma
+_id: req.params.biomeId,
+'enc.name': req.body.name  // Tämä esti encounterin nimen päivittymisen
+
+// Korjattu versio
+_id: req.params.biomeId,
+'enc._id': req.body._id  // Nyt löytyy aina ID:n perusteella</code></pre>
+                    </div>
                 </div>
             </div>
         </section>
@@ -63,11 +229,212 @@
         <section id="skills" class="skills">
             <h2>Taidot</h2>
             <div class="skills-container">
-                <div class="skill-item">HTML5</div>
-                <div class="skill-item">CSS3</div>
-                <div class="skill-item">JavaScript</div>
-                <div class="skill-item">React</div>
-                <!-- Add more skills as needed -->
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Angular</div>
+                        <div class="skill-item">TypeScript</div>
+                        <div class="skill-item">HTML5</div>
+                        <div class="skill-item">CSS3</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Node.js</div>
+                        <div class="skill-item">MongoDB</div>
+                        <div class="skill-item">RESTful APIs</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Työkalut & Menetelmät</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">Git</div>
+                        <div class="skill-item">Docker</div>
+                        <div class="skill-item">Agile</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="learning-diary" class="learning-diary">
+            <h2>Oppimispäiväkirja</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <h3>Syyskuu-Lokakuu 2024</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Viikko 38 - Projektin aloitus</h4>
+                        <h5>🏗️ Pääkomponenttien luonti</h5>
+                        <ul>
+                            <li>Toteutettu projektin perusrakenne:
+                                <ul>
+                                    <li>Navbar-komponentti</li>
+                                    <li>Highway-komponentti (myöhemmin uudelleennimetty)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Haaste:</strong> Biome-tietojen näyttäminen valetietokannasta</li>
+                            <li><strong>Ratkaisu:</strong> Dynaaminen toteutus
+                                <ol>
+                                    <li>Sivusto listaa biomet ID:n perusteella</li>
+                                    <li>ID:tä klikkaamalla pääsee uudelle sivulle</li>
+                                    <li>Uusi sivu näyttää biomin sisällön</li>
+                                </ol>
+                            </li>
+                        </ul>
+
+                        <h4>Viikko 39</h4>
+                        <p>Valtion virallinen kertausharjoitus</p>
+
+                        <h4>Viikko 40 - Modaalit ja tietokantaintegraatio</h4>
+                        <ul>
+                            <li>Enctable-komponentin modaalit:
+                                <ul>
+                                    <li>Nopanheiton tulosten näyttäminen</li>
+                                    <li>Satunnaisten kohtaamisten esittäminen</li>
+                                    <li>Yksittäisten kohtaamisten tarkastelu</li>
+                                </ul>
+                            </li>
+                            <li>MongoDB Atlas -migraatio:
+                                <ul>
+                                    <li>Docker-riippuvuudesta luovuttu</li>
+                                    <li>Yhteys tietokantaan pilvipalvelun kautta</li>
+                                </ul>
+                            </li>
+                            <li>CRUD-operaatioiden toteutus:
+                                <ul>
+                                    <li>Edit-toiminnallisuus</li>
+                                    <li>Delete-toiminnallisuus</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h4>Viikko 41 - Demoviikko</h4>
+                        <p>Random Encountersin Save/Edit/Delete-toiminnallisuudet</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <h3>Marraskuu 2024</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>18.11.2024 - Encountereiden tallennus</h4>
+                        <p>🎯 <strong>Saavutus:</strong> Encountereiden tallennus saatu toimivaksi pitkän työstämisen jälkeen.</p>
+
+                        <h4>22.11.2024 - Demo ja palaute</h4>
+                        <p>🎓 <strong>Demo-arvosana:</strong> 3</p>
+                        <h5>📝 Kehityskohteet seuraavaan demoon:</h5>
+                        <ol>
+                            <li>Syvällisempi analyysi ongelmatilanteista</li>
+                            <li>Selkeämpi esittely tehdyistä asioista</li>
+                            <li>Työskentelytapojen avaaminen</li>
+                            <li>Loppupohdinta</li>
+                        </ol>
+
+                        <h4>25.11.2024 - Google-kirjautuminen</h4>
+                        <h5>🔐 Autentikaation toteutus</h5>
+                        <ul>
+                            <li>Google-kirjautuminen toteutettu Abacritt-kirjastolla</li>
+                            <li>JWT-autentikaatio integroitu</li>
+                            <li>Reitit suojattu auth guardilla</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <h3>Joulukuu 2024</h3>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>29.11.2024 - 09.12.2024</h4>
+                        <p>Kertausharjoitus</p>
+                        <h5>Tulevat tehtävät:</h5>
+                        <ol>
+                            <li>Kirjautumisprosessin toteuttaminen loppuun</li>
+                            <li>LocalStoragen käyttöönotto</li>
+                            <li>PWAn buildaus</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reflection" class="reflection">
+            <h2>🎯 Loppureflektio</h2>
+            
+            <div class="reflection-section">
+                <div class="reflection-card">
+                    <h3>🎯 Loppureflektio ja Ammatillinen Kehitys</h3>
+                </div>
+
+                <div class="reflection-card">
+                    <h3>🎭 Roolit ja Vastuut</h3>
+                    <ul>
+                        <li>Product Owner</li>
+                        <li>FullStack-kehittäjä</li>
+                    </ul>
+                </div>
+
+                <div class="reflection-card">
+                    <h3>📈 Osaamisen Kehittyminen</h3>
+                    
+                    <div class="skills-progress">
+                        <div class="skill-area">
+                            <h4>Frontend (Angular)</h4>
+                            <div class="skill-metrics">
+                                <div class="metric">
+                                    <span>Alkutaso:</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 50%">5/10</div>
+                                    </div>
+                                </div>
+                                <div class="metric">
+                                    <span>Tavoitetaso:</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 80%">8/10</div>
+                                    </div>
+                                </div>
+                                <div class="metric">
+                                    <span>Nykyinen taso:</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 70%">7/10</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-area">
+                            <h4>Backend (Express.js)</h4>
+                            <div class="skill-metrics">
+                                <div class="metric">
+                                    <span>Alkutaso:</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 60%">6/10</div>
+                                    </div>
+                                </div>
+                                <div class="metric">
+                                    <span>Tavoitetaso:</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 80%">8/10</div>
+                                    </div>
+                                </div>
+                                <div class="metric">
+                                    <span>Nykyinen taso:</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 70%">7/10</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reflection-card">
+                    <h3>💭 Yhteenveto</h3>
+                    <p>Vaikka en täysin saavuttanut alkuperäisiä tavoitetasojani (8/10), olen tyytyväinen kehitykseeni sekä frontend- että backend-puolella. Backend-kehitys jäi projektissa vähemmälle huomiolle sen yksinkertaisemman luonteen vuoksi, mutta opin silti arvokkaita taitoja molemmilla osa-alueilla.</p>
+                </div>
             </div>
         </section>
 
