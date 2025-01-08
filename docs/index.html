@@ -105,36 +105,34 @@
             </div>
         </section>
 
+        <{{ ... }}
         <section id="code-examples" class="code-examples-section">
             <h2>Koodiesimerkit</h2>
-            <h3>Random Encounters</h3>
-            <h4>Frontend</h4>
-            <h4>Backend</h4>
-            <h3>Merchants</h3>
-            <h4>Frontend</h4>
-            <h4>Backend</h4>
-            <h3>Login</h3>
-            <h4>Frontend</h4>
-            <h4>Backend</h4>
-
             <div class="code-examples">
-                <div class="code-example">
-                    <div class="code-header" onclick="toggleCode('code1')">
-                        <h4>Tietokantarakenne (InMemoryService)</h4>
-                        <div class="code-actions">
-                            <button class="copy-btn" onclick="copyCode('code1', event)">
-                                <i class="fas fa-copy"></i>
-                            </button>
-                            <span class="expand-icon">▼</span>
-                        </div>
-                    </div>
-                    <div class="code-content" id="code1">
-                        <div class="window-controls">
-                            <span class="control close"></span>
-                            <span class="control minimize"></span>
-                            <span class="control maximize"></span>
-                        </div>
-                        <pre><code class="language-typescript">
+                <!-- Random Encounters Category -->
+                <div class="feature-category">
+                    <h3>Random Encounters</h3>
+                    
+                    <!-- Frontend -->
+                    <div class="subcategory">
+                        <h4>Frontend</h4>
+                        <div class="code-example">
+                            <div class="code-header" onclick="toggleCode('encounters-frontend')">
+                                <h4>Tietokantarakenne (InMemoryService)</h4>
+                                <div class="code-actions">
+                                    <button class="copy-btn" onclick="copyCode('encounters-frontend', event)">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                    <span class="expand-icon">▼</span>
+                                </div>
+                            </div>
+                            <div class="code-content" id="encounters-frontend">
+                                <div class="window-controls">
+                                    <span class="control close"></span>
+                                    <span class="control minimize"></span>
+                                    <span class="control maximize"></span>
+                                </div>
+                                <pre><code class="language-typescript">
 export class InMemoryService implements InMemoryDbService {
   createDb() {
     const highwayEncs = [
@@ -164,26 +162,119 @@ export class InMemoryService implements InMemoryDbService {
     return { highwayEncs, dungeonEncs, wildernessEncs };
   }
 }</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="subcategory">
+                        <h4>Backend</h4>
+                        <div class="code-example">
+                            <div class="code-header" onclick="toggleCode('encounters-backend')">
+                                <h4>Encountereiden tallennus - Korjattu koodi</h4>
+                                <div class="code-actions">
+                                    <button class="copy-btn" onclick="copyCode('encounters-backend', event)">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                    <span class="expand-icon">▼</span>
+                                </div>
+                            </div>
+                            <div class="code-content" id="encounters-backend">
+                                <div class="window-controls">
+                                    <span class="control close"></span>
+                                    <span class="control minimize"></span>
+                                    <span class="control maximize"></span>
+                                </div>
+                                <pre><code class="language-javascript">
+// Alkuperäinen ongelma
+_id: req.params.biomeId,
+'enc.name': req.body.name  // Tämä esti encounterin nimen päivittymisen
+
+// Korjattu versio
+_id: req.params.biomeId,
+'enc._id': req.body._id  // Nyt löytyy aina ID:n perusteella</code></pre>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="code-example">
-                    <div class="code-header" onclick="toggleCode('code2')">
-                        <h4>Google-kirjautumisen konfiguraatio</h4>
-                        <div class="code-actions">
-                            <button class="copy-btn" onclick="copyCode('code2', event)">
-                                <i class="fas fa-copy"></i>
-                            </button>
-                            <span class="expand-icon">▼</span>
+                <!-- Merchants Category -->
+                <div class="feature-category">
+                    <h3>Merchants</h3>
+                    
+                    <!-- Frontend -->
+                    <div class="subcategory">
+                        <h4>Frontend</h4>
+                        <div class="code-example">
+                            <div class="code-header" onclick="toggleCode('merchants-frontend')">
+                                <h4>Merchants Component</h4>
+                                <div class="code-actions">
+                                    <button class="copy-btn" onclick="copyCode('merchants-frontend', event)">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                    <span class="expand-icon">▼</span>
+                                </div>
+                            </div>
+                            <div class="code-content" id="merchants-frontend">
+                                <div class="window-controls">
+                                    <span class="control close"></span>
+                                    <span class="control minimize"></span>
+                                    <span class="control maximize"></span>
+                                </div>
+                                <pre><code class="language-typescript">// Merchants frontend code will be added here</code></pre>
+                            </div>
                         </div>
                     </div>
-                    <div class="code-content" id="code2">
-                        <div class="window-controls">
-                            <span class="control close"></span>
-                            <span class="control minimize"></span>
-                            <span class="control maximize"></span>
+
+                    <!-- Backend -->
+                    <div class="subcategory">
+                        <h4>Backend</h4>
+                        <div class="code-example">
+                            <div class="code-header" onclick="toggleCode('merchants-backend')">
+                                <h4>Merchants API</h4>
+                                <div class="code-actions">
+                                    <button class="copy-btn" onclick="copyCode('merchants-backend', event)">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                    <span class="expand-icon">▼</span>
+                                </div>
+                            </div>
+                            <div class="code-content" id="merchants-backend">
+                                <div class="window-controls">
+                                    <span class="control close"></span>
+                                    <span class="control minimize"></span>
+                                    <span class="control maximize"></span>
+                                </div>
+                                <pre><code class="language-typescript">// Merchants backend code will be added here</code></pre>
+                            </div>
                         </div>
-                        <pre><code class="language-typescript">
+                    </div>
+                </div>
+
+                <!-- Login Category -->
+                <div class="feature-category">
+                    <h3>Login</h3>
+                    
+                    <!-- Frontend -->
+                    <div class="subcategory">
+                        <h4>Frontend</h4>
+                        <div class="code-example">
+                            <div class="code-header" onclick="toggleCode('login-frontend')">
+                                <h4>Google-kirjautumisen konfiguraatio</h4>
+                                <div class="code-actions">
+                                    <button class="copy-btn" onclick="copyCode('login-frontend', event)">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                    <span class="expand-icon">▼</span>
+                                </div>
+                            </div>
+                            <div class="code-content" id="login-frontend">
+                                <div class="window-controls">
+                                    <span class="control close"></span>
+                                    <span class="control minimize"></span>
+                                    <span class="control maximize"></span>
+                                </div>
+                                <pre><code class="language-typescript">
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SocialLoginModule, GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
@@ -204,37 +295,37 @@ import { JwtModule } from '@auth0/angular-jwt';
   ]
 })
 export class AppModule {}</code></pre>
-                    </div>
-                </div>
-
-                <div class="code-example">
-                    <div class="code-header" onclick="toggleCode('code3')">
-                        <h4>Encountereiden tallennus - Korjattu koodi</h4>
-                        <div class="code-actions">
-                            <button class="copy-btn" onclick="copyCode('code3', event)">
-                                <i class="fas fa-copy"></i>
-                            </button>
-                            <span class="expand-icon">▼</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="code-content" id="code3">
-                        <div class="window-controls">
-                            <span class="control close"></span>
-                            <span class="control minimize"></span>
-                            <span class="control maximize"></span>
-                        </div>
-                        <pre><code class="language-javascript">
-// Alkuperäinen ongelma
-_id: req.params.biomeId,
-'enc.name': req.body.name  // Tämä esti encounterin nimen päivittymisen
 
-// Korjattu versio
-_id: req.params.biomeId,
-'enc._id': req.body._id  // Nyt löytyy aina ID:n perusteella</code></pre>
+                    <!-- Backend -->
+                    <div class="subcategory">
+                        <h4>Backend</h4>
+                        <div class="code-example">
+                            <div class="code-header" onclick="toggleCode('login-backend')">
+                                <h4>Authentication API</h4>
+                                <div class="code-actions">
+                                    <button class="copy-btn" onclick="copyCode('login-backend', event)">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                    <span class="expand-icon">▼</span>
+                                </div>
+                            </div>
+                            <div class="code-content" id="login-backend">
+                                <div class="window-controls">
+                                    <span class="control close"></span>
+                                    <span class="control minimize"></span>
+                                    <span class="control maximize"></span>
+                                </div>
+                                <pre><code class="language-typescript">// Authentication backend code will be added here</code></pre>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <section id="skills" class="skills">
             <h2>Taidot</h2>
