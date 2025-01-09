@@ -1,0 +1,71 @@
+                            <div class="code-header" onclick="toggleCode('encounters-frontend-add')">
+                                <h4>Add Encounter</h4>
+                                <div class="code-actions">
+                                    <button class="copy-btn" onclick="copyCode('encounters-frontend-add', event)">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                    <span class="expand-icon">▼</span>
+                                </div>
+                            </div>
+                            <div class="code-content" id="encounters-frontend-add">
+                                <div class="window-controls">
+                                    <span class="control close"></span>
+                                    <span class="control minimize"></span>
+                                    <span class="control maximize"></span>
+                                </div>
+                                <pre><code class="language-typescript">/** ➕➕➕ Encounterin lisäys ➕➕➕
+   * Ensiksi tarkistaa onko encounterille annettu nimi.
+   * Jos on, niin tarkistetaan filteredEncountersin olemassaolo ja ettei se ole null.
+   * Jos se on olemassa, niin tarkistetaan seuraavaksi filteredEncounters._id;n olemassa olo ja ettei se ole null.
+   * Tarkistaa kohtaamisen ja lisää uuden encounterin
+   * @param
+   */
+  public addEnc(result: any): void {
+    console.log('addEnc() called with result:', result);
+    if (!result.name) {
+      console.log('Encounter name is required');
+      this.snackBar.open('Encounter name is required', 'Close', {
+        duration: 3000,
+        panelClass: ['mat-snackbar-error'],
+      });
+    } else {
+      if (this.filteredEncounters && this.filteredEncounters._id) {
+        console.log('Filtered encounters and ID exist');
+        this.eservice
+          .addEnc(this.filteredEncounters._id, {
+            ...result,
+            die: result.roll,
+          })
+          .subscribe(
+            (response) => {
+              console.log('Encounter added:', response);
+              console.log('RULLA', result.roll);
+              console.log('Uusi enkki', this.availableDice);
+              this.getEncounters();
+              this.snackBar.open('Encounter added successfully!', 'Close', {
+                duration: 3000,
+                panelClass: ['mat-snackbar-success'],
+              });
+            },
+            (error) => {
+              console.error('Error adding encounter:', error);
+              this.snackBar.open(
+                'Error adding encounter: ' + error.message,
+                'Close',
+                {
+                  duration: 3000,
+                  panelClass: ['mat-snackbar-error'],
+                }
+              );
+            }
+          );
+      } else {
+        console.log('Valid encounter not selected');
+        this.snackBar.open('Please select a valid encounter first', 'Close', {
+          duration: 3000,
+          panelClass: ['mat-snackbar-warning'],
+        });
+      }
+    }
+  }</code></pre>
+                            </div>
