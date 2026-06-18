@@ -4,7 +4,7 @@ My personal portfolio website showcasing my projects and skills.
 
 ## View Portfolio
 
-Visit my portfolio at: https://[your-github-username].github.io/FortPolio/
+Visit my portfolio at: https://Peltimies.github.io/FortPolio/
 
 ## Development
 
